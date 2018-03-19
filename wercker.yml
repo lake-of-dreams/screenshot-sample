@@ -5,6 +5,9 @@ box: markxnelson/phantomjs
 
 build:
   steps:
-    - markxnelson/screenshot@1.0.2 "https://github.com/markxnelson/step-screenshot/archive/master.tar.gz": 
-      url: https://www.google.com
-      filename: google.png
+    - screenshot: 
+       url: https://www.google.com
+       filename: google.png
+    - script:
+       code: |
+        ls -lahrt ${WERCKER_REPORT_ARTIFACTS_DIR}/WERCKER_SCREENSHOT_FILENAME   
