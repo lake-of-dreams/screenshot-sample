@@ -5,9 +5,9 @@ box: markxnelson/phantomjs
 
 build:
   steps:
-    - screenshot: 
+    - lake-of-dreams/screenshot@1.1.0 "https://github.com/lake-of-dreams/step-screenshot/archive/master.tar.gz":  
        url: https://www.google.com
        filename: google.png
     - script:
        code: |
-        ls -lahrt ${WERCKER_REPORT_ARTIFACTS_DIR}/${WERCKER_SCREENSHOT_FILENAME}   
+        ls -lahrt ${WERCKER_SCREENSHOT_TARGET_FILE}   
