@@ -10,4 +10,4 @@ build:
        filename: google.png
     - script:
        code: |
-        ls -lahrt ${WERCKER_REPORT_ARTIFACTS_DIR}/WERCKER_SCREENSHOT_FILENAME   
+        ls -lahrt ${WERCKER_REPORT_ARTIFACTS_DIR}/${WERCKER_SCREENSHOT_FILENAME}   
