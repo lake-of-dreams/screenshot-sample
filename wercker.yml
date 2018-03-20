@@ -31,7 +31,7 @@ build:
        filename: screenshots/google.png
        create_file_in_artifacts: true
     - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
-       name: "Create screenshot at an relative path to the artifacts directory ()"
+       name: "Create screenshot at an relative path to the artifacts directory (Leading forward slash ignored in path)"
        url: https://www.google.com
        filename: /screenshot/google.png
        create_file_in_artifacts: true      
