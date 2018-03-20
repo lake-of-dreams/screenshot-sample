@@ -6,13 +6,34 @@ box: markxnelson/phantomjs
 build:
   steps:
     - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
+       name: "Create screenshot at top level in the source directory"
        url: https://www.google.com
        file_path: google.png
        create_file_in_artifacts: false
     - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
+       name: "Create screenshot at top level in the artifatcs directory"
        url: https://www.google.com
        file_path: google.png
-       create_file_in_artifacts: true   
-    - script:
-       code: |
-        ls -lahrt ${WERCKER_SOURCE_DIR}   
+       create_file_in_artifacts: true
+    - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
+       name: "Create screenshot at an absolute path in the box"
+       url: https://www.google.com
+       file_path: /screenshots/google.png
+       create_file_in_artifacts: false
+    - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
+       name: "Create screenshot at an relative path to source directory"
+       url: https://www.google.com
+       file_path: screenshot/google.png
+       create_file_in_artifacts: false
+    - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
+       name: "Create screenshot at an relative path to the artifacts directory"
+       url: https://www.google.com
+       file_path: screenshots/google.png
+       create_file_in_artifacts: true
+    - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
+       name: "Create screenshot at an relative path to source directory"
+       url: https://www.google.com
+       file_path: /screenshot/google.png
+       create_file_in_artifacts: true      
+          
+       
