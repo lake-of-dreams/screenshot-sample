@@ -8,6 +8,7 @@ build:
     - wercker/screenshot@1.1.1 "https://github.com/wercker/step-screenshot/archive/issue-1750.tar.gz":  
        url: https://www.google.com
        filename: google.png
+       create_file_in_artifacts: false
     - script:
        code: |
-        ls -lahrt ${WERCKER_SCREENSHOT_TARGET_FILE}   
+        ls -lahrt ${WERCKER_SOURCE_DIR}   
